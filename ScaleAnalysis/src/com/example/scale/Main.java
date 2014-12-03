@@ -30,7 +30,7 @@ public class Main {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
             	MainJFrame frame = new MainJFrame();
-                frame.setLocation(300, 100);
+                frame.setLocation(250, 30);
                 frame.setTitle("油气田水垢形成机理与防治处理研究");
                 frame.setResizable(false);
                 frame.setVisible(true);
