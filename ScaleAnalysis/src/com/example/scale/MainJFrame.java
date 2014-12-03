@@ -18,7 +18,11 @@ import com.example.scale.data.Data;
  */
 public class MainJFrame extends javax.swing.JFrame {
 
+	ScaleSelectorJPanel selectorJPanel ;
+	JDialog dialog;
 	
+	JPanelCard panelCard;
+	JDialog cardDialog;
 	
     /**
      * Creates new form MainJFrame
@@ -27,8 +31,23 @@ public class MainJFrame extends javax.swing.JFrame {
         initComponents();
     }
     
-    ScaleSelectorJPanel selectorJPanel ;
-	JDialog dialog;
+    private void showChooseDialog()
+    {
+    	if(panelCard == null) {
+    		panelCard = new JPanelCard();
+    	}
+    	if(cardDialog == null) {
+    		cardDialog=new JDialog();
+//    		cardDialog.setTitle("请选择");
+    	}
+    	
+    	
+    	cardDialog.add(panelCard);
+    	cardDialog.setSize(1030, 650);
+    	cardDialog.setLocation(150, 30);
+    	cardDialog.setVisible(true);
+    	
+    }
 
     private void showInputDialog()
     {
@@ -63,9 +82,8 @@ public class MainJFrame extends javax.swing.JFrame {
     	
     	dialog.add(selectorJPanel);
     	dialog.setSize(270, 180);
-    	dialog.setLocation(450, 270);
+    	dialog.setLocation(500, 250);
     	dialog.setVisible(true);
-    	
     	
     }
     
@@ -107,7 +125,7 @@ public class MainJFrame extends javax.swing.JFrame {
             public Object getElementAt(int i) { return strings[i]; }
         });
         jList1.setCellRenderer(new FontCellRenderer());
-jList1.addListSelectionListener(new ListSelectionListener() {
+        jList1.addListSelectionListener(new ListSelectionListener() {
 			
 			@Override
 			public void valueChanged(ListSelectionEvent arg0) {
@@ -117,15 +135,17 @@ jList1.addListSelectionListener(new ListSelectionListener() {
 					//如果不需要弹框选择
 					JList list = (JList)arg0.getSource();
 					int index = list.getSelectedIndex();
-					if(index == list.getModel().getSize()-1) {
+					if(index == list.getModel().getSize()-2) {
 						//弹框选择
 						showInputDialog();
-					} else if(index != 0) {
+					} else if(index == list.getModel().getSize()-1) {
+						//弹框选择
+						showChooseDialog();
+					}else if(index != 0) {
 						//显示右边的东西
 						showTextArea(Data.CONS[index]);
-					}
+					} 
 //					System.out.println(list.getModel().getSize());
-					
 					
 				}
 			}
