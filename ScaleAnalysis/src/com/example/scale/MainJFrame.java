@@ -37,7 +37,7 @@ public class MainJFrame extends javax.swing.JFrame {
     		panelCard = new JPanelCard();
     	}
     	if(cardDialog == null) {
-    		cardDialog=new JDialog();
+    		cardDialog=new JDialog(this);
 //    		cardDialog.setTitle("«Î—°‘Ò");
     	}
     	
@@ -46,6 +46,7 @@ public class MainJFrame extends javax.swing.JFrame {
     	cardDialog.setSize(1030, 650);
     	cardDialog.setLocation(150, 30);
     	cardDialog.setVisible(true);
+    	cardDialog.setResizable(false);
     	
     }
 
@@ -55,7 +56,7 @@ public class MainJFrame extends javax.swing.JFrame {
     		selectorJPanel = new ScaleSelectorJPanel();
     	}
     	if(dialog == null) {
-    		dialog=new JDialog();
+    		dialog=new JDialog(this);
     		dialog.setTitle("«Î—°‘Ò");
     	}
     	
@@ -81,9 +82,10 @@ public class MainJFrame extends javax.swing.JFrame {
 		});
     	
     	dialog.add(selectorJPanel);
-    	dialog.setSize(270, 180);
+    	dialog.setSize(350, 200);
     	dialog.setLocation(500, 250);
     	dialog.setVisible(true);
+    	dialog.setResizable(false);
     	
     }
     
@@ -190,9 +192,9 @@ public class MainJFrame extends javax.swing.JFrame {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        bgView.setView(jTextArea1);
+        bgView.setView(jTextArea1);//no use
         
-        jScrollPane2.setViewportView(bgView);
+        jScrollPane2.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
