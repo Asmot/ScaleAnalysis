@@ -112,7 +112,7 @@ public class JPanelCard extends javax.swing.JPanel {
         Cal3_bt = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("宋体", 0, 24)); // NOI18N
-        jLabel1.setText("用Oddo-Tomson饱和指数法预测注水井碳酸盐结垢");
+        jLabel1.setText("用Oddo-Tomson饱和指数法预测注水井碳酸盐、硫酸盐结垢");
 
         jTabbedPane1.setToolTipText("");
         jTabbedPane1.setName(""); // NOI18N
@@ -447,7 +447,7 @@ public class JPanelCard extends javax.swing.JPanel {
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("预测有气相存在时碳酸盐垢的形成趋势", jPanel6);
+        jTabbedPane1.addTab("预测无气相存在时碳酸垢的形成趋势", jPanel6);
 
         jLabel39.setFont(new java.awt.Font("宋体", 2, 18)); // NOI18N
         jLabel39.setText("输入：");
@@ -607,7 +607,7 @@ public class JPanelCard extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("其他计算", jPanel7);
+        jTabbedPane1.addTab("预测硫酸盐结垢趋势", jPanel7);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -616,7 +616,7 @@ public class JPanelCard extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(268, 268, 268)
+                        .addGap(200, 200, 200)//(268, 268, 268)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
